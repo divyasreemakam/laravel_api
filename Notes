@@ -24,4 +24,8 @@ Insert Data to database using seeder
 php artisan migrate:fresh --seed
 
 Create a new resource - Display  column names from DB in required format
-php artisan make:resource v1\customerResource
+php artisan make:resource V1\CustomerResource
+
+
+To display the DB data for complete list, create a new resource collection
+php artsian make:resource V1\CustomerCollection
