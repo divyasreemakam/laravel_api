@@ -20,6 +20,8 @@ git push origin main
 Make Model
 php artisan make:model Customer --all
 
-Insert radom values to database using seeder
-
+Insert Data to database using seeder
 php artisan migrate:fresh --seed
+
+Create a new resource - Display  column names from DB in required format
+php artisan make:resource v1\customerResource
