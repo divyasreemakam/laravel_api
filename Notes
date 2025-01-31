@@ -1,0 +1,25 @@
+composer global require laravel/installer
+
+laravel new  laravel_api --force
+
+cd laravel_api
+
+git remote add origin https://github.com/divyasreemakam/laravel_api.git
+
+git init
+
+git add .
+
+git commit "adding intial files"
+
+git branch -M "main"
+
+git push origin main
+
+
+Make Model
+php artisan make:model Customer --all
+
+Insert radom values to database using seeder
+
+php artisan migrate:fresh --seed
