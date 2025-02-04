@@ -1,31 +1,17 @@
 <?php
 
-namespace App\Services\V1;
+namespace App\Filter;
 
 use Illuminate\Http\Request;
 
-class CustomerQuery {
+class ApiFilter {
 
-    protected $safeParams = [
-        'name' => ['eq'],
-        'type' => ['eq'],
-        'email' => ['eq'],
-        'city' => ['eq'],
-        'address' => ['eq'],
-        'state' => ['eq'],
-        'postalCode' => ['eq', 'gt', 'lt']
-    ];
+    protected $safeParams = [];
 
 
-    protected $columnMap = [
-        'postalCode' => 'postal_code'
-    ];
+    protected $columnMap = [];
 
-    protected $operatorMap = [
-        'gt' => '>',
-        'lt' => '<',
-        'eq' => '='
-    ];
+    protected $operatorMap = [];
 
     function transform(Request $request){
         $elnQuery = [];
@@ -46,8 +32,6 @@ class CustomerQuery {
 
 
         }
-
-        //print_r($elnQuery);die;
 
         return $elnQuery;
 
