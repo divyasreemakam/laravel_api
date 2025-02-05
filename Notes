@@ -29,3 +29,6 @@ php artisan make:resource V1\CustomerResource
 
 To display the DB data for complete list, create a new resource collection
 php artsian make:resource V1\CustomerCollection
+
+To create custome request for validation for create customer
+php artisan make:request V1\StoreCustomerRequest
