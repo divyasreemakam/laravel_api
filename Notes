@@ -32,3 +32,6 @@ php artsian make:resource V1\CustomerCollection
 
 To create custome request for validation for create customer
 php artisan make:request V1\StoreCustomerRequest
+
+To update customer data
+php artisan make:request V1\UpdateCustomerRequest
