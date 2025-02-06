@@ -11,6 +11,9 @@ use App\Http\Resources\V1\InvoiceResource;
 use App\Http\Resources\V1\InvoiceCollection;
 use App\Filter\V1\InvoicesFilter;
 use Illuminate\Http\Request;
+use App\Http\Requests\V1\BulkStoreInvoiceRequest;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 class InvoiceController extends Controller
 {
@@ -38,6 +41,15 @@ class InvoiceController extends Controller
     public function create()
     {
         //
+    }
+
+
+    public function bulkStore(BulkStoreInvoiceRequest $request) {
+        $bulk = collect($request->all())->map(function($arr, $key) {
+            return Arr::except($arr, ['customerId', 'paidDate', 'billedDate']);
+        });
+
+        Invoice::insert($bulk->toArray());
     }
 
     /**
